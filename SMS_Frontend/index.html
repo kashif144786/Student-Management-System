@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="navbar-left">
+        <h1>Student Management</h1>
+        <span class="navbar-tag">Admin Panel</span>
+      </div>
+      <nav class="navbar-actions">
+        <a href="dashboard.html" class="navbar-link">Dashboard</a>
+        <button type="button" class="navbar-link navbar-logout" onclick="logout()">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="dashboard.html" class="back-link">&larr; Back to dashboard</a>
+
+    <div class="toolbar">
+      <input type="text" id="search-input" class="search-input" placeholder="Search by name or email...">
+      <a href="form.html" class="btn btn-primary">+ Add Student</a>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Email</th>
+            <th class="col-actions">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="student-table-body">
+          <tr><td colspan="6">Loading students...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="row-count" id="row-count"></p>
+
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="list.js"></script>
+</body>
+</html>

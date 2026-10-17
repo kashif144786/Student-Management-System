@@ -1,0 +1,471 @@
+/* =========================================
+   1. RESET & VARIABLES
+   ========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* padding/border included in element width, not added on top */
+}
+
+:root {
+  --bg: #F6F7F9;
+  --surface: #FFFFFF;
+  --border: #E1E4EA;
+  --text: #1E2330;
+  --text-muted: #6B7280;
+
+  --primary: #2F5FA3;
+  --primary-dark: #24487F;
+
+  --danger: #C7453D;
+  --danger-dark: #A83730;
+
+  --radius: 6px;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   2. NAVBAR
+   ========================================= */
+
+.navbar {
+  background-color: #1B2A4A;
+  color: #FFFFFF;
+  border-bottom: 1px solid #10192E;
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.navbar h1 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.navbar-tag {
+  font-size: 0.8rem;
+  color: #A9B6D2;
+}
+
+
+/* =========================================
+   3. LAYOUT / CONTAINER
+   ========================================= */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.container-narrow {
+  max-width: 560px;
+}
+
+
+/* =========================================
+   4. TOOLBAR (search + add button)
+   ========================================= */
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  width: 260px;
+  max-width: 100%;
+  background-color: var(--surface);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(47, 95, 163, 0.15);
+}
+
+
+/* =========================================
+   5. BUTTONS
+   ========================================= */
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-edit {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.btn-edit:hover {
+  background-color: var(--bg);
+}
+
+.btn-delete {
+  background-color: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+.btn-delete:hover {
+  background-color: var(--danger);
+  color: #FFFFFF;
+}
+
+.btn-cancel {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+.btn-cancel:hover {
+  background-color: var(--bg);
+}
+
+
+/* =========================================
+   6. TABLE
+   ========================================= */
+
+.table-wrapper {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+thead {
+  background-color: #F0F2F5;
+}
+
+th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: #FAFBFC;
+}
+
+.col-actions {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.row-count {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+
+/* =========================================
+   7. FORM PAGE
+   ========================================= */
+
+.back-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+.back-link:hover {
+  color: var(--text);
+}
+
+.form-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+.form-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.form-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--text);
+  background-color: var(--surface);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(47, 95, 163, 0.15);
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+
+/* =========================================
+   8. RESPONSIVE
+   ========================================= */
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   9. LOGIN PAGE
+   ========================================= */
+
+.login-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 400px;
+  padding: 1.5rem;
+}
+
+.login-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.btn-full {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.error-text {
+  font-size: 0.82rem;
+  color: var(--danger);
+  margin-bottom: 0.5rem;
+  min-height: 1.1em;
+}
+
+.success-text {
+  font-size: 0.85rem;
+  color: #1F7A5C;
+  margin-bottom: 0.5rem;
+  min-height: 1.1em;
+}
+
+.login-hint {
+  margin-top: 1.25rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+
+/* =========================================
+   10. NAVBAR ACTIONS (Dashboard / Logout)
+   ========================================= */
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.navbar-link {
+  font-size: 0.85rem;
+  color: #C9D4E8;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+
+.navbar-link:hover {
+  color: #FFFFFF;
+}
+
+
+/* =========================================
+   11. DASHBOARD MENU
+   ========================================= */
+
+.dashboard-heading {
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+
+/* =========================================
+   12. ID LOOKUP + STUDENT DETAIL (Update/Delete/Search)
+   ========================================= */
+
+.lookup-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.lookup-row input {
+  flex: 1;
+}
+
+.student-detail {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.student-detail div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.35rem 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.student-detail div:last-child {
+  border-bottom: none;
+}
+
+.student-detail span {
+  color: var(--text-muted);
+}
+
+
+/* =========================================
+   13. UTILITY
+   ========================================= */
+
+.hidden {
+  display: none !important;
+}

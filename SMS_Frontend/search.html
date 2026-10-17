@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Student</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="navbar-left">
+        <h1>Student Management</h1>
+        <span class="navbar-tag">Admin Panel</span>
+      </div>
+      <nav class="navbar-actions">
+        <a href="dashboard.html" class="navbar-link">Dashboard</a>
+        <button type="button" class="navbar-link navbar-logout" onclick="logout()">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container container-narrow">
+    <a href="dashboard.html" class="back-link">&larr; Back to dashboard</a>
+
+    <div class="form-card">
+      <h2>Search Student</h2>
+      <p class="form-subtitle">Enter a Student ID to view their details.</p>
+
+      <div class="lookup-row">
+        <input type="number" id="lookup-id" placeholder="Student ID" min="1">
+        <button type="button" class="btn btn-primary" id="search-btn">Search</button>
+      </div>
+
+      <p class="error-text" id="lookup-error"></p>
+
+      <div class="student-detail hidden" id="student-detail">
+        <div><span>ID</span><strong id="detail-id"></strong></div>
+        <div><span>Name</span><strong id="detail-name"></strong></div>
+        <div><span>Age</span><strong id="detail-age"></strong></div>
+        <div><span>Course</span><strong id="detail-course"></strong></div>
+        <div><span>Email</span><strong id="detail-email"></strong></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="search.js"></script>
+</body>
+</html>

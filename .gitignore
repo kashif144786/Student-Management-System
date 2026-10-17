@@ -1,0 +1,23 @@
+# Eclipse workspace (do not upload)
+.metadata/
+
+# Backend build output / Eclipse files
+StudentManagementSystem/bin/
+StudentManagementSystem/target/
+StudentManagementSystem/.settings/
+*.class
+*.log
+
+# Frontend dependencies / build
+SMS_Frontend/node_modules/
+SMS_Frontend/build/
+SMS_Frontend/dist/
+
+# Secrets
+.env
+*.env
+
+# OS / editor
+Thumbs.db
+.DS_Store
+.vscode/

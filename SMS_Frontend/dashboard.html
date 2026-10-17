@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Student Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="navbar-left">
+        <h1>Student Management</h1>
+        <span class="navbar-tag">Admin Panel</span>
+      </div>
+      <nav class="navbar-actions">
+        <button type="button" class="navbar-link navbar-logout" onclick="logout()">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container container-narrow">
+    <h2 class="dashboard-heading">Dashboard</h2>
+    <p class="form-subtitle">Choose an action.</p>
+
+    <div class="dashboard-menu">
+      <a href="form.html" class="btn btn-primary btn-full">Add Student</a>
+      <a href="index.html" class="btn btn-edit btn-full">View Students</a>
+      <a href="update.html" class="btn btn-edit btn-full">Update Student</a>
+      <a href="delete.html" class="btn btn-edit btn-full">Delete Student</a>
+      <a href="search.html" class="btn btn-edit btn-full">Search Student</a>
+    </div>
+  </main>
+
+  <script src="auth.js"></script>
+  <script>
+    requireAuth();
+  </script>
+</body>
+</html>
